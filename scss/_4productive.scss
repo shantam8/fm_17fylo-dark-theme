@@ -1,0 +1,36 @@
+section#productive {
+  background-color: $darkBlueMain;
+  text-align: left;
+  padding: 7rem 2rem 2rem 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  .wrapper {
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+    }
+
+    .link {
+      position: relative;
+      display: inline-block;
+      line-height: 2rem;
+      color: $cyan;
+      border-bottom: 2px solid $cyan;
+
+      &::after {
+        content: url("../images/icon-arrow.svg");
+        position: relative;
+        top: 2px;
+        right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@mixin button{
+    width: 80%;
+    background-image: linear-gradient(to right, $cyan, $blue);
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    color: $white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+

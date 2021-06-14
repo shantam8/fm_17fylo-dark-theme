@@ -1,5 +1,14 @@
 @import "fonts";
+@import "mixins";
 @import "variables";
+
+@import "1header";
+@import "2started";
+@import "3access";
+@import "4productive";
+@import "5testi";
+@import "6early";
+@import "7footer";
 
 
 
@@ -9,4 +18,25 @@
     box-sizing: border-box;
     //    font-family: 'Raleway', sans-serif; 400, 700
     //     font-family: 'Open Sans', sans-serif;
+}
+
+
+body{
+    color: $white;
+    text-align: center;
+}
+
+h1, h2, h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h2, h3{
+    font-size: 1.1rem;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
 }

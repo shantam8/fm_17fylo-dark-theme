@@ -1,0 +1,44 @@
+section#testi {
+  background-color: $darkBlueMain;
+  padding: 5rem 3rem;
+
+  .testiCard {
+    background-color: $darkBlueTestimonial;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: left;
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.3rem;
+    }
+
+    .grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "image name" "image status";
+      justify-items: start;
+      align-items: center;
+
+      img {
+        grid-area: image;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+      }
+
+      h3 {
+        grid-area: name;
+        font-size: 0.8rem;
+      }
+
+      p {
+        grid-area: status;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
