@@ -755,7 +755,7 @@ footer .grid .address .email {
   margin-bottom: 4rem;
 }
 
-footer .grid nav {
+footer .grid ul {
   margin-top: 3rem;
   font-family: "Open Sans", sans-serif;
   font-size: 0.9rem;
@@ -764,21 +764,21 @@ footer .grid nav {
 }
 
 @media screen and (min-width: 64rem) {
-  footer .grid nav {
+  footer .grid ul {
     margin-top: 0;
   }
 }
 
-footer .grid nav li {
+footer .grid ul li {
   margin-bottom: 1rem;
 }
 
-footer .grid nav li:hover {
+footer .grid ul li:hover {
   cursor: pointer;
   font-weight: 700;
 }
 
-footer .grid nav li:active {
+footer .grid ul li:active {
   color: #65e2d9;
   border-color: #65e2d9;
 }
