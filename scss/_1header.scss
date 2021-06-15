@@ -1,13 +1,12 @@
 header {
-  background-color: $darkBlueTestimonial;
   padding: 1rem;
   display: grid;
-
   grid-template-columns: 40% repeat(3, 1fr);
   gap: 1rem;
   justify-items: center;
   align-items: center;
-
+  background-color: $darkBlueTestimonial;
+  
   @include breakpoint(small) {
     padding: 2rem;
     grid-template-columns: 60% repeat(3, 1fr);
@@ -22,6 +21,7 @@ header {
   img {
     width: 50%;
     justify-self: start;
+    
     @include breakpoint(small) {
       width: 40%;
     }

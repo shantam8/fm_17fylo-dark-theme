@@ -3,18 +3,15 @@ section#started {
   background-color: $darkBlueTestimonial;
   padding: 2rem;
 
-  @include breakpoint(small){
+  @include breakpoint(small) {
     padding: 2rem 4rem;
   }
 
-  @include breakpoint(medium){
-
+  @include breakpoint(medium) {
     padding: 2rem 25%;
   }
 
-
-  @include breakpoint(large){
-
+  @include breakpoint(large) {
     padding: 2rem 30%;
   }
 
@@ -22,8 +19,6 @@ section#started {
     position: relative;
     width: 100%;
     z-index: 10;
-
-
   }
 
   h1 {
@@ -32,9 +27,10 @@ section#started {
     line-height: 2rem;
     z-index: 9;
 
-    @include breakpoint(medium){
-    font-size: 2rem;
-    line-height: 3rem;}
+    @include breakpoint(medium) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
   }
 
   p {
@@ -43,9 +39,10 @@ section#started {
     line-height: 1.5rem;
     z-index: 8;
 
-    @include breakpoint(medium){
+    @include breakpoint(medium) {
       font-size: 1rem;
-      line-height: 1.5rem;}
+      line-height: 1.5rem;
+    }
   }
 
   button {
@@ -56,17 +53,21 @@ section#started {
     margin-top: 2rem;
     z-index: 7;
 
-    @include breakpoint(large){
+    @include breakpoint(large) {
       width: 35%;
     }
   }
 
   &::before {
-    content: url("../images/bg-curvy-mobile.svg");
+    content: "";
+    background-image: url("../images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom;
     position: absolute;
-    height: 141px;
-    width: 100%;
-    top: 225px;
+    right: 0;
+    bottom: 34%;
+    top: 0;
     left: 0;
   }
 
@@ -77,6 +78,11 @@ section#started {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 292px;
+    height: 34%;
   }
+
+  @include setBgHill(420px, 23%);
+  @include setBgHill(590px, 9%);
+  @include setBgHill(750px, 0%);
+  @include setBgHill(1300px, -9%);
 }

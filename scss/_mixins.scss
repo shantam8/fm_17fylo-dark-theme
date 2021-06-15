@@ -11,6 +11,7 @@
 
 @mixin btnHover {
   cursor: pointer;
+  
   &:hover {
     transition: all 0.5s ease-in-out;
     background-image: linear-gradient(to left, $cyan, $blue);
@@ -26,6 +27,7 @@
   &:hover {
     cursor: pointer;
     font-weight: 700;
+
     @if ($prop == "topnav") {
       border-bottom: 1px solid $white;
     }
@@ -56,22 +58,22 @@
 }
 
 @mixin hoverLink {
-    &:hover {
-      cursor: pointer;
-      border-color: $cyan;
-  
-      path {
-        fill: $cyan;
-      }
-    }
-  
-    &:active {
-      border-color: $blue;
-      path {
-        fill: $blue;
-      }
+  &:hover {
+    cursor: pointer;
+    border-color: $cyan;
+
+    path {
+      fill: $cyan;
     }
   }
+
+  &:active {
+    border-color: $blue;
+    path {
+      fill: $blue;
+    }
+  }
+}
 
 $breakpoints: (
   "small": 40rem,
@@ -82,5 +84,16 @@ $breakpoints: (
 @mixin breakpoint($width) {
   @media screen and (min-width: (map-get($breakpoints, $width))) {
     @content;
+  }
+}
+
+@mixin setBgHill($screenSize, $height) {
+  @media screen and (min-width: $screenSize) {
+    &::before {
+      bottom: $height;
+    }
+    &::after {
+      height: $height;
+    }
   }
 }

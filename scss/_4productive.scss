@@ -56,9 +56,19 @@ section#productive {
         border-color: $white;
 
         svg {
-          #linkCircle{
-
+          #linkCircle {
             fill: $white;
+          }
+        }
+      }
+
+      &:active {
+        color: $blue;
+        border-color: $blue;
+
+        svg {
+          #linkCircle {
+            fill: $blue;
           }
         }
       }

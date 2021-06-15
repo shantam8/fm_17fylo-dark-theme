@@ -17,13 +17,13 @@ section#testi {
     grid-template-areas: "av1 av2 av3";
     gap: 2rem;
 
-    .av1{
+    .av1 {
       grid-area: av1;
     }
-    .av2{
+    .av2 {
       grid-area: av2;
     }
-    .av3{
+    .av3 {
       grid-area: av3;
     }
   }

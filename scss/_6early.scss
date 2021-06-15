@@ -21,8 +21,6 @@ section#early {
       padding: 2rem 4rem;
     }
 
-  
-
     p {
       margin-top: 1rem;
       margin-bottom: 2rem;
@@ -53,6 +51,11 @@ section#early {
       }
 
       &.error {
+
+        input{
+          border: 2px solid red;
+        }
+
         &::after {
           content: "Please enter a valid email address.";
           position: absolute;

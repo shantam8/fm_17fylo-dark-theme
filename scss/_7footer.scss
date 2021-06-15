@@ -16,6 +16,7 @@ footer {
     @include breakpoint(small) {
       width: 160px;
     }
+
     @include breakpoint(medium) {
       margin-bottom: 2rem;
     }
@@ -89,12 +90,12 @@ footer {
     }
 
     nav {
+      margin-top: 3rem;
       font-family: "Open Sans", sans-serif;
       font-size: 0.9rem;
+      text-align: left;
       list-style: none;
 
-      text-align: left;
-      margin-top: 3rem;
       @include breakpoint(medium) {
         margin-top: 0;
       }
@@ -102,7 +103,6 @@ footer {
       li {
         margin-bottom: 1rem;
         @include hovertext(none);
-
       }
     }
 
