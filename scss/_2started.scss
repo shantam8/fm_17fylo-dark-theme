@@ -3,10 +3,27 @@ section#started {
   background-color: $darkBlueTestimonial;
   padding: 2rem;
 
+  @include breakpoint(small){
+    padding: 2rem 4rem;
+  }
+
+  @include breakpoint(medium){
+
+    padding: 2rem 25%;
+  }
+
+
+  @include breakpoint(large){
+
+    padding: 2rem 30%;
+  }
+
   img {
     position: relative;
     width: 100%;
     z-index: 10;
+
+
   }
 
   h1 {
@@ -14,6 +31,10 @@ section#started {
     margin-top: 2rem;
     line-height: 2rem;
     z-index: 9;
+
+    @include breakpoint(medium){
+    font-size: 2rem;
+    line-height: 3rem;}
   }
 
   p {
@@ -21,13 +42,23 @@ section#started {
     margin-top: 1rem;
     line-height: 1.5rem;
     z-index: 8;
+
+    @include breakpoint(medium){
+      font-size: 1rem;
+      line-height: 1.5rem;}
   }
 
   button {
     @include button;
+    @include btnHover;
+
     position: relative;
     margin-top: 2rem;
     z-index: 7;
+
+    @include breakpoint(large){
+      width: 35%;
+    }
   }
 
   &::before {

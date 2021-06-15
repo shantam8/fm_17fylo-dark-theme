@@ -3,11 +3,34 @@ section#productive {
   text-align: left;
   padding: 7rem 2rem 2rem 2rem;
 
+  @include breakpoint(small) {
+    padding: 7rem 4rem 2rem 4rem;
+  }
+
+  @include breakpoint(medium) {
+    padding: 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "image text";
+    justify-items: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
   img {
     width: 100%;
+
+    @include breakpoint(medium) {
+      grid-area: image;
+    }
   }
 
   .wrapper {
+    @include breakpoint(medium) {
+      grid-area: text;
+    }
+
     h2 {
       margin-top: 2rem;
     }
@@ -19,17 +42,34 @@ section#productive {
     }
 
     .link {
-      position: relative;
-      display: inline-block;
-      line-height: 2rem;
+      width: max-content;
+      width: max-content;
+      display: flex;
+      justify-content: start;
+      align-items: center;
       color: $cyan;
       border-bottom: 2px solid $cyan;
 
-      &::after {
-        content: url("../images/icon-arrow.svg");
+      &:hover {
+        cursor: pointer;
+        color: $white;
+        border-color: $white;
+
+        svg {
+          #linkCircle{
+
+            fill: $white;
+          }
+        }
+      }
+
+      p {
+        padding-right: 5px;
+      }
+
+      svg {
         position: relative;
-        top: 2px;
-        right: 0;
+        top: 8px;
       }
     }
   }

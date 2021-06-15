@@ -1,11 +1,86 @@
-@mixin button{
-    width: 80%;
-    background-image: linear-gradient(to right, $cyan, $blue);
-    border: none;
-    height: 50px;
-    border-radius: 25px;
-    color: $white;
-    font-size: 1rem;
-    font-weight: 700;
+@mixin button {
+  width: 80%;
+  background-image: linear-gradient(to right, $cyan, $blue);
+  border: none;
+  height: 50px;
+  border-radius: 25px;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
+@mixin btnHover {
+  cursor: pointer;
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-image: linear-gradient(to left, $cyan, $blue);
+  }
+  &:active {
+    transition: all 0s ease-in-out;
+    background-image: unset;
+    background-color: $blue;
+  }
+}
+
+@mixin hovertext($prop) {
+  &:hover {
+    cursor: pointer;
+    font-weight: 700;
+    @if ($prop == "topnav") {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  &:active {
+    color: $cyan;
+    border-color: $cyan;
+  }
+}
+
+@mixin hoverSvg {
+  &:hover {
+    cursor: pointer;
+    border-color: $cyan;
+
+    path {
+      fill: $cyan;
+    }
+  }
+
+  &:active {
+    border-color: $blue;
+    path {
+      fill: $blue;
+    }
+  }
+}
+
+@mixin hoverLink {
+    &:hover {
+      cursor: pointer;
+      border-color: $cyan;
+  
+      path {
+        fill: $cyan;
+      }
+    }
+  
+    &:active {
+      border-color: $blue;
+      path {
+        fill: $blue;
+      }
+    }
+  }
+
+$breakpoints: (
+  "small": 40rem,
+  "medium": 64rem,
+  "large": 90rem,
+);
+
+@mixin breakpoint($width) {
+  @media screen and (min-width: (map-get($breakpoints, $width))) {
+    @content;
+  }
+}

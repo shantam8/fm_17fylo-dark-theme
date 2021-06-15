@@ -1,13 +1,53 @@
 section#testi {
+  position: relative;
   background-color: $darkBlueMain;
-  padding: 5rem 3rem;
+  padding: 5rem 3rem 0rem 3rem;
+
+  @include breakpoint(small) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include breakpoint(medium) {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "av1 av2 av3";
+    gap: 2rem;
+
+    .av1{
+      grid-area: av1;
+    }
+    .av2{
+      grid-area: av2;
+    }
+    .av3{
+      grid-area: av3;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: url("../images/bg-quotes.png");
+    top: 5rem;
+    left: 3rem;
+    z-index: 1;
+
+    @include breakpoint(small) {
+      left: 6.5rem;
+    }
+  }
 
   .testiCard {
+    position: relative;
     background-color: $darkBlueTestimonial;
     border-radius: 8px;
     margin-top: 2rem;
     padding: 2rem;
     text-align: left;
+    z-index: 10;
 
     p {
       font-size: 0.8rem;

@@ -14,20 +14,84 @@ header {
           align-items: center;
 }
 
+@media screen and (min-width: 40rem) {
+  header {
+    padding: 2rem;
+    -ms-grid-columns: 60% (1fr)[3];
+        grid-template-columns: 60% repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  header {
+    padding: 4rem;
+    padding-bottom: 0rem;
+    -ms-grid-columns: 75% (1fr)[3];
+        grid-template-columns: 75% repeat(3, 1fr);
+  }
+}
+
 header img {
   width: 50%;
   -ms-grid-column-align: start;
       justify-self: start;
 }
 
+@media screen and (min-width: 40rem) {
+  header img {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  header img {
+    width: 145px;
+  }
+}
+
 header p {
   font-size: 0.7rem;
+}
+
+header p:hover {
+  cursor: pointer;
+  font-weight: 700;
+  border-bottom: 1px solid white;
+}
+
+header p:active {
+  color: #65e2d9;
+  border-color: #65e2d9;
+}
+
+@media screen and (min-width: 40rem) {
+  header p {
+    font-size: 0.9rem;
+  }
 }
 
 section#started {
   position: relative;
   background-color: #202a3c;
   padding: 2rem;
+}
+
+@media screen and (min-width: 40rem) {
+  section#started {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#started {
+    padding: 2rem 25%;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  section#started {
+    padding: 2rem 30%;
+  }
 }
 
 section#started img {
@@ -43,11 +107,25 @@ section#started h1 {
   z-index: 9;
 }
 
+@media screen and (min-width: 64rem) {
+  section#started h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
 section#started p {
   position: relative;
   margin-top: 1rem;
   line-height: 1.5rem;
   z-index: 8;
+}
+
+@media screen and (min-width: 64rem) {
+  section#started p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 section#started button {
@@ -60,9 +138,30 @@ section#started button {
   color: white;
   font-size: 1rem;
   font-weight: 700;
+  cursor: pointer;
   position: relative;
   margin-top: 2rem;
   z-index: 7;
+}
+
+section#started button:hover {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-image: -webkit-gradient(linear, right top, left top, from(#65e2d9), to(#339ecc));
+  background-image: linear-gradient(to left, #65e2d9, #339ecc);
+}
+
+section#started button:active {
+  -webkit-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
+  background-image: unset;
+  background-color: #339ecc;
+}
+
+@media screen and (min-width: 90rem) {
+  section#started button {
+    width: 35%;
+  }
 }
 
 section#started::before {
@@ -89,8 +188,58 @@ section#access {
   background-color: #181f2a;
 }
 
+@media screen and (min-width: 40rem) {
+  section#access {
+    padding: 3rem 4rem 0 4rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#access {
+    padding: 6rem 0 3rem 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.4fr 1fr 1fr 0.4fr;
+        grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: ". access security ." ". collaboration anyfile .";
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 3rem;
+  }
+  section#access .access {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: access;
+  }
+  section#access .security {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: security;
+  }
+  section#access .collaboration {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: collaboration;
+  }
+  section#access .anyfile {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: anyfile;
+  }
+}
+
 section#access .card {
   padding: 3rem 1rem;
+}
+
+@media screen and (min-width: 64rem) {
+  section#access .card {
+    padding: 0;
+  }
 }
 
 section#access .card img {
@@ -111,8 +260,47 @@ section#productive {
   padding: 7rem 2rem 2rem 2rem;
 }
 
+@media screen and (min-width: 40rem) {
+  section#productive {
+    padding: 7rem 4rem 2rem 4rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#productive {
+    padding: 2rem 5rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "image text";
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 3rem;
+  }
+}
+
 section#productive img {
   width: 100%;
+}
+
+@media screen and (min-width: 64rem) {
+  section#productive img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: image;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#productive .wrapper {
+    grid-area: text;
+  }
 }
 
 section#productive .wrapper h2 {
@@ -126,31 +314,107 @@ section#productive .wrapper p {
 }
 
 section#productive .wrapper .link {
-  position: relative;
-  display: inline-block;
-  line-height: 2rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #65e2d9;
   border-bottom: 2px solid #65e2d9;
 }
 
-section#productive .wrapper .link::after {
-  content: url("../images/icon-arrow.svg");
+section#productive .wrapper .link:hover {
+  cursor: pointer;
+  color: white;
+  border-color: white;
+}
+
+section#productive .wrapper .link:hover svg #linkCircle {
+  fill: white;
+}
+
+section#productive .wrapper .link p {
+  padding-right: 5px;
+}
+
+section#productive .wrapper .link svg {
   position: relative;
-  top: 2px;
-  right: 0;
+  top: 8px;
 }
 
 section#testi {
+  position: relative;
   background-color: #181f2a;
-  padding: 5rem 3rem;
+  padding: 5rem 3rem 0rem 3rem;
+}
+
+@media screen and (min-width: 40rem) {
+  section#testi {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#testi {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "av1 av2 av3";
+    gap: 2rem;
+  }
+  section#testi .av1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: av1;
+  }
+  section#testi .av2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: av2;
+  }
+  section#testi .av3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: av3;
+  }
+}
+
+section#testi::before {
+  position: absolute;
+  content: url("../images/bg-quotes.png");
+  top: 5rem;
+  left: 3rem;
+  z-index: 1;
+}
+
+@media screen and (min-width: 40rem) {
+  section#testi::before {
+    left: 6.5rem;
+  }
 }
 
 section#testi .testiCard {
+  position: relative;
   background-color: #202a3c;
   border-radius: 8px;
   margin-top: 2rem;
   padding: 2rem;
   text-align: left;
+  z-index: 10;
 }
 
 section#testi .testiCard p {
@@ -199,24 +463,58 @@ section#testi .testiCard .grid p {
 
 section#early {
   background-color: #181f2a;
-  padding: 5rem 2rem;
+  padding: 0rem 2rem;
+}
+
+@media screen and (min-width: 40rem) {
+  section#early {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  section#early {
+    padding: 0 20%;
+  }
 }
 
 section#early .card {
+  position: relative;
+  top: 10rem;
   background-color: #1c2431;
   border-radius: 8px;
   padding: 2rem;
 }
 
+@media screen and (min-width: 64rem) {
+  section#early .card {
+    padding: 2rem 4rem;
+  }
+}
+
 section#early .card p {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.4rem;
 }
 
 section#early .card .grid {
   position: relative;
+}
+
+@media screen and (min-width: 64rem) {
+  section#early .card .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
 }
 
 section#early .card .grid input {
@@ -226,11 +524,11 @@ section#early .card .grid input {
   height: 50px;
   border-radius: 25px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #181f2a;
 }
 
-section#early .card .grid::after .error {
+section#early .card .grid.error::after {
   content: "Please enter a valid email address.";
   position: absolute;
   padding-left: 2rem;
@@ -253,8 +551,248 @@ section#early .card .grid button {
   color: white;
   font-size: 1rem;
   font-weight: 700;
+  cursor: pointer;
   margin-top: 2rem;
   width: 100%;
+}
+
+section#early .card .grid button:hover {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-image: -webkit-gradient(linear, right top, left top, from(#65e2d9), to(#339ecc));
+  background-image: linear-gradient(to left, #65e2d9, #339ecc);
+}
+
+section#early .card .grid button:active {
+  -webkit-transition: all 0s ease-in-out;
+  transition: all 0s ease-in-out;
+  background-image: unset;
+  background-color: #339ecc;
+}
+
+@media screen and (min-width: 64rem) {
+  section#early .card .grid button {
+    width: 100%;
+    margin-top: 0;
+    font-size: 0.8rem;
+  }
+}
+
+footer {
+  padding: 14rem 2rem 2rem 2rem;
+  background-color: #0b1523;
+  text-align: left;
+}
+
+@media screen and (min-width: 40rem) {
+  footer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+footer > img {
+  width: 140px;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+@media screen and (min-width: 40rem) {
+  footer > img {
+    width: 160px;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  footer > img {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  footer .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr (1fr)[4];
+        grid-template-columns: 2fr repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "address phone nav1 nav2 social" "address mail nav1 nav2 social" "address . nav1 nav2 .";
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+    row-gap: 1rem;
+    justify-items: baseline;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  footer .grid .address {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    grid-area: address;
+  }
+  footer .grid .phone {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: phone;
+  }
+  footer .grid .email {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: mail;
+  }
+  footer .grid .nav1 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+    grid-area: nav1;
+  }
+  footer .grid .nav2 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 4;
+    grid-area: nav2;
+  }
+  footer .grid .socialMedia {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 5;
+    grid-area: social;
+  }
+}
+
+footer .grid .contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 64rem) {
+  footer .grid .contact {
+    margin-top: 0;
+  }
+}
+
+footer .grid .contact img {
+  height: 18px;
+  width: 18px;
+}
+
+footer .grid .contact p {
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+footer .grid .address img {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  position: relative;
+  top: 6px;
+}
+
+footer .grid .address .email {
+  margin-bottom: 4rem;
+}
+
+footer .grid nav {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  list-style: none;
+  text-align: left;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 64rem) {
+  footer .grid nav {
+    margin-top: 0;
+  }
+}
+
+footer .grid nav li {
+  margin-bottom: 1rem;
+}
+
+footer .grid nav li:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+footer .grid nav li:active {
+  color: #65e2d9;
+  border-color: #65e2d9;
+}
+
+footer .grid .socialMedia {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 64rem) {
+  footer .grid .socialMedia {
+    margin-top: 0;
+    width: 100%;
+    margin: unset;
+  }
+}
+
+footer .grid .socialMedia .svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+  width: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+footer .grid .socialMedia .svg:hover {
+  cursor: pointer;
+  border-color: #65e2d9;
+}
+
+footer .grid .socialMedia .svg:hover path {
+  fill: #65e2d9;
+}
+
+footer .grid .socialMedia .svg:active {
+  border-color: #339ecc;
+}
+
+footer .grid .socialMedia .svg:active path {
+  fill: #339ecc;
+}
+
+footer .grid .socialMedia .svg svg {
+  width: 50%;
+  height: 50%;
+}
+
+footer .grid .socialMedia .svg svg path {
+  fill: white;
 }
 
 * {

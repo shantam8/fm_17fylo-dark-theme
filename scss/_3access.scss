@@ -1,21 +1,51 @@
-section#access{
+section#access {
+  padding: 3rem 1rem 0 1rem;
+  background-color: $darkBlueMain;
 
-padding: 3rem 1rem 0 1rem;
-background-color: $darkBlueMain;
+  @include breakpoint(small) {
+    padding: 3rem 4rem 0 4rem;
+  }
 
+  @include breakpoint(medium) {
+    padding: 6rem 0 3rem 0;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". access security ." ". collaboration anyfile .";
+    justify-items: center;
+    align-items: center;
+    gap: 3rem;
 
-.card{
+    .access {
+      grid-area: access;
+    }
+    .security {
+      grid-area: security;
+    }
+    .collaboration {
+      grid-area: collaboration;
+    }
+    .anyfile {
+      grid-area: anyfile;
+    }
+  }
+
+  .card {
     padding: 3rem 1rem;
 
-    img{
-        width: 65px;
-    };
+    @include breakpoint(medium) {
+      padding: 0;
+    }
 
-    h2{
-        margin-top: 2rem;
+    img {
+      width: 65px;
     }
-    p{
-        margin-top: 1rem;
+
+    h2 {
+      margin-top: 2rem;
     }
-}
+    p {
+      margin-top: 1rem;
+    }
+  }
 }
